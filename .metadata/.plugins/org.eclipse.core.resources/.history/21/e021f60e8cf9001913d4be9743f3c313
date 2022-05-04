@@ -1,0 +1,139 @@
+package bankAccountTest2;
+
+import java.util.ArrayList;
+import bankAccountTest2.BankAccountManagement;
+public class BankAccountTest {
+
+	private String ownerName;
+	private String middle_n;
+	private String last_n;
+	private double balance;
+	private double InterestRate;//interestRate
+	private double interestAmnt; //holds total amount of interest earn for the account
+	private int SocialSecN;
+	private ArrayList<String> names = new ArrayList<String>();
+	private ArrayList<String> middle = new ArrayList<String>();
+	private ArrayList<String> last = new ArrayList<String>();
+	private ArrayList<Integer> social = new ArrayList<Integer>();
+	private ArrayList<Double> bList = new ArrayList<Double>();
+	
+	
+	
+	//constructor for the name and balance
+
+	BankAccountTest(String n, String mn, String ln, double b, int ssc){
+
+	ownerName = n;
+	middle_n = mn;
+	last_n = ln;
+	balance = b;
+	SocialSecN = ssc;
+	InterestRate = 0.012;
+	}
+	
+	
+	void members_name() {
+		
+		ArrayList<String> names = new ArrayList<String>();
+		names.add("Juan");
+		names.add("Ryan");
+		names.add("Matame");
+	}
+	
+	void members_middle() {
+		
+		ArrayList<String> middle = new ArrayList<String>();
+		middle.add("M");
+		middle.add("Y");
+		middle.add("X");
+	}
+	
+	void members_last() {
+	
+	ArrayList<String> last = new ArrayList<String>();
+	last.add("Alvarado");
+	last.add("Ocasio");
+	last.add("Fiz");
+}
+	
+	
+	void members_ssn() {
+	
+	ArrayList<Integer> social = new ArrayList<Integer>();
+	social.add(1234);
+	social.add(9876);
+	social.add(4564);
+}
+	void members_balance(){
+		ArrayList<Double> blist = new ArrayList<Double>();
+		blist.add(100.50);
+		blist.add(2000.75);
+		blist.add(30000.99);
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//Calculation
+	void deposit(double amount){
+
+		balance += amount;
+		}
+	
+	
+	void withdraw(double amount){
+
+		balance -= amount;
+		}
+	
+	void addMonthlyInterest() {
+		
+		double t= 0;
+		t = InterestRate*balance;
+		balance +=t;
+		interestAmnt +=t;
+	}
+	
+	//Setter
+	void setInterestRate(double ir ) {InterestRate = ir;}
+	
+	
+	//Getter
+	double getInterstAmnt() {return interestAmnt;}
+	
+	double getInterestRate() {return InterestRate;}
+	
+	double getMonthlyInterestRate(){return InterestRate/12;}
+
+	double getBalance() {return balance;}
+	
+	String getName(){return ownerName;}
+	
+	String get_middleN() {return middle_n;}
+	
+	String get_lastN() {return last_n;}
+	
+	int get_SocialSecN() {return SocialSecN;}
+	
+	
+	void check()) {
+	
+	Scanner keyword = new Scanner(System.in);
+	
+	while(true)
+	{
+		System.out.println("What is your SSN?: ");
+		int SsocialNum;
+		
+	
+	}
+	
+	}

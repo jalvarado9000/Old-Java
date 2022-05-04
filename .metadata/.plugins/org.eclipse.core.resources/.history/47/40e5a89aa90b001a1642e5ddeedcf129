@@ -1,0 +1,12 @@
+import javax.swing.JApplet;
+
+public class Hed extends JApplet {
+
+	/**
+	 * Create the applet.
+	 */
+	public Hed() {
+
+	}
+
+}

@@ -1,0 +1,21 @@
+package decisiones;
+import java.util.Scanner;
+
+public class Decisiones {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner age;
+		
+		
+		
+		
+		System.out.println("Que edad tiene/n/n");
+		
+		
+		
+
+	}
+
+}

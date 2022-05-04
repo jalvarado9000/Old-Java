@@ -1,0 +1,243 @@
+package bankAccountTest2;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+import bankAccountTest2.BankAccountTest;
+import bankAccountTest2.BankAccountTest;
+public class BankAccountManagement {
+	
+	private String first_name;
+	private String middle_name;
+	private String last_name; 
+	private double new_deposit;
+	private int SSN;
+	
+	
+	
+	
+	
+	
+	void showMenu() {
+		System.out.println("Press 1 to Create a account");
+		System.out.println("Press 2 remove account");
+		System.out.println("Press 3 view account");
+		System.out.println("Press 4 to deposit");
+		System.out.println("Press 5 to withdraw");
+		System.out.println("Press 0 to exit program");
+		}
+		
+		void Menu(int op, ArrayList<Integer>social,ArrayList<String>names, ArrayList<String>middle, ArrayList<String>last, ArrayList<Double>blist) {
+			
+			int op1 = op;
+			
+			do {
+			switch(op1) {
+			
+			case 1: 
+				create();
+				break;
+			//case 2:
+				//remove();
+			case 3:
+				int confirmation = AnalyseArray(social);
+				viewAccount(confirmation, social, names, middle, last, blist );
+				
+				/*break;
+			case 4:
+				deposit();
+			case 5:
+				withdraw();
+				break;
+				*/
+			default:
+				System.out.println("The number "  + op + " you have pressed is not on the menu");
+				
+			}	
+			
+			}while(op1 != 0);	
+		}
+	
+		
+
+		void create() {
+			
+			String first_name, middle_name, last_name;
+			int SSN;
+			double new_deposit;
+			boolean bool = true;
+			Scanner input = new Scanner(System.in);
+			
+			System.out.println("what is your first Name");
+			first_name = input.nextLine();
+			
+			System.out.println("what is the first letter of your inicial Name");
+			middle_name = input.nextLine();
+			
+			System.out.println("what is your last Name");
+			last_name = input.nextLine();
+			
+			System.out.println("what the last 4 digits of your SSN?");
+			SSN = input.nextInt();
+			
+			do {
+			if(SSN > 1000 && SSN < 9999) {
+				System.out.println("the number you have eneterd is incorrect");
+				bool = false;
+			}
+			}while(bool != false);
+			
+			
+			System.out.println("Please deposit a a amount");
+			new_deposit = input.nextDouble();
+			
+			do {
+				if(new_deposit <= 0) {
+					System.out.println("Your have not deposited a correct amount of money");
+					bool = false;
+				}
+				}while(bool !=true);
+			
+			
+		}
+		
+		double get_newBalance() {return new_deposit;}
+		
+		String get_firstName(){return first_name;}
+		
+		String get_middlename() {return middle_name;}
+		
+		String get_lastname() {return last_name;}
+		
+		int get_SSN() {return SSN;}
+		
+		
+		
+		
+		void new_to_list_name(String ownerName){
+			
+			ArrayList<String> names = new ArrayList<String>();
+			names.set(0,ownerName);
+			
+				
+		}
+		
+		void new_to_list_middle(String middle_n){
+			
+			ArrayList<String> middle = new ArrayList<String>();
+			middle.set(0,middle_n);	
+			
+		}
+		
+		void new_to_list_last(String last_n){
+			
+			ArrayList<String> last = new ArrayList<String>();
+			last.set(0,last_n);
+			
+	
+		}
+		
+		void new_to_list_SSN(int SocialSecN) {
+			
+			ArrayList<Integer> social = new ArrayList<Integer>();
+			social.set(0,SocialSecN);
+			
+			
+		}
+		
+		void new_to_list_balance(double balance) {
+			
+			ArrayList<Double> bList = new ArrayList<Double>();
+			bList.set(0,balance);
+			
+		}
+		
+		
+		
+		public int AnalyseArray(ArrayList<Integer>social) {
+			
+			while(true)
+
+		     {
+			 Scanner keyword = new Scanner(System.in);
+		     System.out.println("What is your SSN?: ");
+		     int SSecurityN;
+		     
+		     SSecurityN = keyword.nextInt();
+
+		     if(SSN == 0) {System.exit(0);}
+
+		     for(int i = 0; i< social.size(); i++) {
+		     int position = i;
+		     if (social.get(position) == SSN) {
+
+		     return position;
+		     
+		     }
+
+		     else 
+		    System.out.print("Account not found ");
+			
+		     }
+		     }
+		}
+			
+			void viewAccount(int con, String names, String m, String ln, Double bl){
+				
+				
+				 //
+				
+			}
+			
+			
+		void viewAccount(int con, ArrayList<Integer> social, ArrayList<String> names,
+					ArrayList<String> middle, ArrayList<String> last, ArrayList<Double> blist) {
+				// TODO Auto-generated method stub
+			 System.out.print("Account User name: " + names.get(con));
+			 System.out.print(" "+ middle.get(con) + ".");
+			 System.out.print(" " + last.get(con)); 
+			 System.out.println("Your last 4 digits of your social security number is: " + social.get(con));
+			 System.out.println("Your balance is: " + blist.get(con));
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			void remove(int num){
+			
+			Scanner input = new Scanner(System.in);
+			String confirm;
+			int new_SSN;
+			char letter;
+			do {
+			System.out.println("You are about to remove a account are you sure? Y/(Yes) or N/(No)");
+			confirm = input.nextLine();
+			letter = confirm.charAt(0);
+			
+			}while(letter == 'N' || letter == 'n');
+			
+			System.out.println("Enter your social security number");
+			new_SSN = input.nextInt();
+			
+			
+			if(new_SSN == num) {
+				
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+	
+	
+}
